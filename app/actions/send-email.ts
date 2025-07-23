@@ -1,20 +1,20 @@
 "use server"
 
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export async function sendContactEmail(formData: FormData) {
   const name = formData.get("name") as string
   const phone = formData.get("phone") as string
   const instagram = formData.get("instagram") as string
   const score = formData.get("score") as string
 
-  // Simular envio de email (em produção, você usaria um serviço como Resend, SendGrid, etc.)
   try {
-    // Aqui você integraria com um serviço de email real
-    // Por exemplo, usando Resend:
-    /*
     await resend.emails.send({
-      from: 'noreply@seudominio.com',
-      to: 'contato@contrastmkt.com',
-      subject: 'Novo Pretendente Qualificado - Vanessa',
+      from: "Love Quiz <onboarding@resend.dev>",
+      to: "contato@contrastmkt.com",
+      subject: "Novo Pretendente Qualificado - Vanessa",
       html: `
         <h2>Novo Pretendente Qualificado!</h2>
         <p><strong>Nome:</strong> ${name}</p>
@@ -24,10 +24,6 @@ export async function sendContactEmail(formData: FormData) {
         <p>Este pretendente foi aprovado no teste de qualificação da Vanessa!</p>
       `
     })
-    */
-
-    // Simulação de delay para mostrar loading
-    await new Promise((resolve) => setTimeout(resolve, 2000))
 
     console.log("Email enviado:", { name, phone, instagram, score })
 
