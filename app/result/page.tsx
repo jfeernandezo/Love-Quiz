@@ -46,7 +46,7 @@ export default function ResultPage() {
     <main className="min-h-screen bg-gradient-to-br from-primary-rose-50 to-secondary-cream-100 flex flex-col items-center justify-center p-4 sm:p-8">
       <Card className="w-full max-w-2xl bg-white/95 backdrop-blur-sm shadow-2xl border-primary-rose-200 animate-fade-in">
         <CardHeader className="text-center">
-          <CardTitle className="text-primary-rose-700 text-3xl font-bold">Resultado da Qualificação</CardTitle>
+          <CardTitle className="text-primary-rose-700 text-3xl font-bold">Em busca do príncipe encantado</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6 text-center">
           {isQualified ? (
